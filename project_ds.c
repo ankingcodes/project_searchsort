@@ -1,4 +1,5 @@
 //to create a menu-driven program for operations on arrays
+//this project was made in 2018 for data structures project
 #include<stdio.h>
 #include<stdlib.h>
 void linear_search(int array[], int n);
