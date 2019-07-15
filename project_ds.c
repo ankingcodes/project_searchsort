@@ -9,6 +9,7 @@ void selection_sort(int array[],int n);
 void insertion_sort(int array[],int n);
 void insertion_element(int array[],int n);
 void deletion_element(int array[],int n);
+void wave_sort(int array[], int n);
 void main()
 {
   int n,i,arr[10],choice,ch=1;
@@ -29,6 +30,7 @@ void main()
         printf("\n 5. Insertion Sort");
         printf("\n 6. Insert an Element");
         printf("\n 7. Delete an Element");
+        printf("\n 8. Wave Sort");
 
         printf("\n Enter your choice: ");
         scanf("%d",&choice);
@@ -55,6 +57,9 @@ void main()
     break;
 
     case 7: deletion_element(arr,n);
+    break;
+      
+    case 8: wave_sort(arr,n);
     break;
   }
   printf("\n Do you wish to continue: Type 0 or 1:");
@@ -247,3 +252,22 @@ void deletion_element(int array[],int n)
     }
 
 }
+
+void wave_sort(int a[], int n)
+{
+  for(int i=0;i<n;i+=2){
+    //check left element
+    if(i>0 && a[i-1]>a[i]){
+      swap(a[i],a[i-1]);
+    }
+    //check right element
+    if(i<n-1 && a[i+1]>a[i]){
+      swap(a[i],a[i+1]);
+    }
+  }
+  //print array
+  for(int i=0;i<n;i++)
+    printf("\t %d",a[i]);
+}
+  
+    
